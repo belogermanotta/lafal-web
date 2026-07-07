@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Coffee } from "lucide-react";
 
 const features = [
   "Unlimited local transcription",
@@ -51,6 +51,20 @@ export default function Pricing() {
             Download for free
           </a>
         </div>
+
+        <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+          Enjoying Lafal? Consider{" "}
+          <a
+            href="https://buymeacoffee.com/lafal.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-amber-600 underline decoration-amber-600/40 underline-offset-2 transition hover:text-amber-500 dark:text-amber-400 dark:decoration-amber-400/40"
+          >
+            <Coffee size={14} />
+            buying me a coffee
+          </a>{" "}
+          to support development.
+        </p>
       </div>
     </section>
   );

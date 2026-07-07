@@ -1,10 +1,10 @@
 import {
-  Globe2,
-  WifiOff,
-  Cloud,
-  LayoutGrid,
-  Smartphone,
-  Bot,
+  Mic,
+  SpellCheck2,
+  Scissors,
+  Wand2,
+  FileText,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -12,44 +12,64 @@ type Feature = {
   icon: LucideIcon;
   title: string;
   description: string;
+  gradient: string;
+  tags?: string[];
+  span?: boolean;
 };
+
+const verdicts = [
+  { label: "True", className: "bg-emerald-500" },
+  { label: "Likely True", className: "bg-emerald-400/70" },
+  { label: "Not Sure", className: "bg-amber-400" },
+  { label: "Likely False", className: "bg-orange-500/70" },
+  { label: "False", className: "bg-rose-500" },
+  { label: "Not a Claim", className: "bg-gray-400 dark:bg-gray-600" },
+];
 
 const features: Feature[] = [
   {
-    icon: Globe2,
-    title: "100+ languages",
+    icon: Mic,
+    title: "Speech to text",
     description:
-      "Dictate in your language of choice with accurate, natural transcription.",
+      "Say it, don't type it. Lafal turns your voice into clean text at conversation speed — significantly faster than any keyboard.",
+    gradient: "from-violet-600 to-indigo-500",
   },
   {
-    icon: WifiOff,
-    title: "Offline & private",
+    icon: SpellCheck2,
+    title: "Proofread",
     description:
-      "Local models run entirely on-device, optimized for Apple Silicon. Nothing leaves your Mac.",
+      "Grammar, spelling, and punctuation corrected right where you wrote it — no rewrites, no rewording, just a cleaner version of your own words.",
+    gradient: "from-blue-600 to-cyan-500",
   },
   {
-    icon: Cloud,
-    title: "Bring your own cloud",
+    icon: Scissors,
+    title: "Concise",
     description:
-      "Connect OpenAI, Deepgram, Groq, Google, or Anthropic with your own API key.",
+      "Cuts the filler, keeps the point. Shortens your text in place while preserving exactly what you meant to say.",
+    gradient: "from-emerald-600 to-teal-500",
   },
   {
-    icon: LayoutGrid,
-    title: "Works everywhere",
+    icon: Wand2,
+    title: "Rephrase",
     description:
-      "System-wide dictation that drops your words into any app on macOS or Windows.",
+      "One idea, any voice. Rewrite what you wrote in the tone the moment calls for.",
+    gradient: "from-fuchsia-600 to-pink-500",
+    tags: ["Barbaric", "Casual", "Standard", "Formal"],
   },
   {
-    icon: Smartphone,
-    title: "Native iOS keyboard",
+    icon: FileText,
+    title: "Summarize",
     description:
-      "A custom keyboard brings the same fast dictation to your iPhone and iPad.",
+      "Get the gist in seconds. Opens in a tidy popup you can copy from or close the moment you're done.",
+    gradient: "from-amber-500 to-orange-500",
   },
   {
-    icon: Bot,
-    title: "Agentic actions",
+    icon: ShieldCheck,
+    title: "Fact check",
     description:
-      "Trigger voice-controlled automations and connect to coding agents over MCP.",
+      "A six-level verdict on any claim — with a plain-English explanation, a source link when one's available, and a one-click Google fallback whenever the answer is inconclusive.",
+    gradient: "from-rose-600 to-red-500",
+    span: true,
   },
 ];
 
@@ -62,23 +82,57 @@ export default function Features() {
         </h2>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
           One app, two ways to transcribe — fully local for privacy, or cloud
-          engines for speed and accuracy.
+          engines for speed and accuracy. Then let Lafal clean up, reshape,
+          and check what you wrote.
         </p>
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ icon: Icon, title, description }) => (
+        {features.map(({ icon: Icon, title, description, gradient, tags, span }) => (
           <div
             key={title}
-            className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-gray-900/60 dark:hover:bg-gray-900"
+            className={`group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-gray-900/60 dark:hover:bg-gray-900 ${
+              span ? "sm:col-span-2 lg:col-span-1" : ""
+            }`}
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-indigo-500 text-white">
+            <div
+              className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-sm transition group-hover:scale-105`}
+            >
               <Icon size={20} />
             </div>
-            <h3 className="mt-4 font-semibold text-gray-950 dark:text-white">{title}</h3>
+            <h3 className="mt-4 font-semibold text-gray-950 dark:text-white">
+              {title}
+            </h3>
             <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {description}
             </p>
+
+            {tags && (
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-black/5 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {title === "Fact check" && (
+              <div
+                className="mt-4 flex items-center gap-1"
+                title="Every claim gets one of six verdicts: True, Likely True, Not Sure, Likely False, False, or Not a Factual Claim."
+              >
+                {verdicts.map((v) => (
+                  <span
+                    key={v.label}
+                    className={`h-1.5 flex-1 rounded-full ${v.className}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

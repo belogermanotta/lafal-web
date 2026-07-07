@@ -1,18 +1,10 @@
 import Image from "next/image";
-import { MessageCircle, Mail, AtSign } from "lucide-react";
+import { Coffee } from "lucide-react";
 
 const columns = [
   {
     title: "Product",
     links: ["Features", "Pricing", "Download", "Changelog"],
-  },
-  {
-    title: "Resources",
-    links: ["Documentation", "Comparisons", "Support", "Status"],
-  },
-  {
-    title: "Company",
-    links: ["About", "Blog", "Privacy", "Terms"],
   },
 ];
 
@@ -20,8 +12,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-black/5 bg-white dark:border-white/10 dark:bg-gray-950">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-          <div className="col-span-2 sm:col-span-1">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="sm:col-span-2">
             <a href="#" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
               <Image
                 src="/logo.png"
@@ -33,19 +25,17 @@ export default function Footer() {
               Lafal
             </a>
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-              Voice-to-text dictation for macOS and Windows
+              Voice-to-text dictation for macOS, Windows &amp; Linux
             </p>
-            <div className="mt-4 flex gap-3 text-gray-400 dark:text-gray-500">
-              <a href="#" aria-label="Twitter" className="hover:text-gray-700 dark:hover:text-gray-200">
-                <AtSign size={18} />
-              </a>
-              <a href="#" aria-label="Discord" className="hover:text-gray-700 dark:hover:text-gray-200">
-                <MessageCircle size={18} />
-              </a>
-              <a href="#" aria-label="Email" className="hover:text-gray-700 dark:hover:text-gray-200">
-                <Mail size={18} />
-              </a>
-            </div>
+            <a
+              href="https://buymeacoffee.com/lafal.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-gray-950 shadow-sm shadow-amber-400/30 transition hover:-translate-y-0.5 hover:bg-amber-300 hover:shadow-md hover:shadow-amber-400/40"
+            >
+              <Coffee size={16} />
+              Buy me a coffee
+            </a>
           </div>
 
           {columns.map((col) => (

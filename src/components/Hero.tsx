@@ -1,6 +1,33 @@
-import { Apple, Monitor } from "lucide-react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { Apple, Monitor, Terminal, type LucideIcon } from "lucide-react";
+
+type OS = "macos" | "windows" | "linux";
+
+const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> = {
+  macos: { label: "macOS", icon: Apple, href: "#" },
+  windows: { label: "Windows", icon: Monitor, href: "#" },
+  linux: { label: "Linux", icon: Terminal, href: "#" },
+};
+
+function detectOS(): OS {
+  const ua = navigator.userAgent;
+  if (/Win/i.test(ua)) return "windows";
+  if (/Linux/i.test(ua) && !/Android/i.test(ua)) return "linux";
+  return "macos";
+}
 
 export default function Hero() {
+  const [os, setOs] = useState<OS>("macos");
+
+  useEffect(() => {
+    setOs(detectOS());
+  }, []);
+
+  const primary = platforms[os];
+  const others = (Object.keys(platforms) as OS[]).filter((key) => key !== os);
+
   return (
     <section className="relative overflow-hidden">
       <div
@@ -14,7 +41,7 @@ export default function Hero() {
         <h1 className="text-4xl font-semibold tracking-tight text-gray-950 sm:text-6xl dark:text-white">
           Voice-to-text dictation
           <br />
-          for macOS, Windows &amp; iOS
+          for macOS, Windows &amp; Linux
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
@@ -23,22 +50,24 @@ export default function Hero() {
           favorite cloud engine for maximum accuracy.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div id="download" className="mt-10 flex flex-col items-center justify-center gap-3">
           <a
-            id="download"
-            href="#"
+            href={primary.href}
             className="flex items-center gap-2 rounded-full bg-gray-950 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-gray-950/10 transition hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
           >
-            <Apple size={18} />
-            Download for macOS
+            <primary.icon size={18} />
+            Download for {primary.label}
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-medium text-gray-800 transition hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:bg-white/10"
-          >
-            <Monitor size={18} />
-            Download for Windows
-          </a>
+          <p className="text-xs text-gray-400 dark:text-gray-500">
+            Also available for{" "}
+            <a href={platforms[others[0]].href} className="underline hover:text-gray-600 dark:hover:text-gray-300">
+              {platforms[others[0]].label}
+            </a>{" "}
+            and{" "}
+            <a href={platforms[others[1]].href} className="underline hover:text-gray-600 dark:hover:text-gray-300">
+              {platforms[others[1]].label}
+            </a>
+          </p>
         </div>
 
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
