@@ -14,7 +14,6 @@ type Feature = {
   description: string;
   gradient: string;
   tags?: string[];
-  span?: boolean;
 };
 
 const verdicts = [
@@ -39,21 +38,21 @@ const features: Feature[] = [
     title: "Proofread",
     description:
       "Grammar, spelling, and punctuation corrected right where you wrote it — no rewrites, no rewording, just a cleaner version of your own words.",
-    gradient: "from-blue-600 to-cyan-500",
+    gradient: "from-violet-600 to-indigo-500",
   },
   {
     icon: Scissors,
     title: "Concise",
     description:
       "Cuts the filler, keeps the point. Shortens your text in place while preserving exactly what you meant to say.",
-    gradient: "from-emerald-600 to-teal-500",
+    gradient: "from-violet-600 to-indigo-500",
   },
   {
     icon: Wand2,
     title: "Rephrase",
     description:
       "One idea, any voice. Rewrite what you wrote in the tone the moment calls for.",
-    gradient: "from-fuchsia-600 to-pink-500",
+    gradient: "from-violet-600 to-indigo-500",
     tags: ["Barbaric", "Casual", "Standard", "Formal"],
   },
   {
@@ -61,15 +60,14 @@ const features: Feature[] = [
     title: "Summarize",
     description:
       "Get the gist in seconds. Opens in a tidy popup you can copy from or close the moment you're done.",
-    gradient: "from-amber-500 to-orange-500",
+    gradient: "from-violet-600 to-indigo-500",
   },
   {
     icon: ShieldCheck,
     title: "Fact check",
     description:
       "A six-level verdict on any claim — with a plain-English explanation, a source link when one's available, and a one-click Google fallback whenever the answer is inconclusive.",
-    gradient: "from-rose-600 to-red-500",
-    span: true,
+    gradient: "from-violet-600 to-indigo-500",
   },
 ];
 
@@ -88,12 +86,10 @@ export default function Features() {
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ icon: Icon, title, description, gradient, tags, span }) => (
+        {features.map(({ icon: Icon, title, description, gradient, tags }) => (
           <div
             key={title}
-            className={`group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-gray-900/60 dark:hover:bg-gray-900 ${
-              span ? "sm:col-span-2 lg:col-span-1" : ""
-            }`}
+            className="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-gray-900/60 dark:hover:bg-gray-900"
           >
             <div
               className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-sm transition group-hover:scale-105`}

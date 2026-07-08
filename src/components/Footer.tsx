@@ -16,11 +16,18 @@ export default function Footer() {
           <div className="sm:col-span-2">
             <a href="#" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
               <Image
-                src="/logo.png"
+                src="/logo-black.svg"
                 alt="Lafal"
                 width={32}
                 height={32}
-                className="h-8 w-8 dark:invert"
+                className="h-8 w-8 dark:hidden"
+              />
+              <Image
+                src="/logo-white.svg"
+                alt="Lafal"
+                width={32}
+                height={32}
+                className="hidden h-8 w-8 dark:block"
               />
               Lafal
             </a>
@@ -39,7 +46,7 @@ export default function Footer() {
           </div>
 
           {columns.map((col) => (
-            <div key={col.title}>
+            <div key={col.title} className="text-right">
               <h4 className="text-sm font-semibold text-gray-950 dark:text-white">
                 {col.title}
               </h4>

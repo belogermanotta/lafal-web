@@ -20,11 +20,18 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2 font-semibold text-lg text-gray-950 dark:text-white">
           <Image
-            src="/logo.png"
+            src="/logo-black.svg"
             alt="Lafal"
             width={32}
             height={32}
-            className="h-8 w-8 dark:invert"
+            className="h-8 w-8 dark:hidden"
+          />
+          <Image
+            src="/logo-white.svg"
+            alt="Lafal"
+            width={32}
+            height={32}
+            className="hidden h-8 w-8 dark:block"
           />
           Lafal
         </a>
