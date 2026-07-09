@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Docs", href: "#" },
 ];
 
@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-md dark:border-white/10 dark:bg-gray-950/80">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-2 font-semibold text-lg text-gray-950 dark:text-white">
+        <a href="/" className="flex items-center gap-2 font-semibold text-lg text-gray-950 dark:text-white">
           <Image
             src="/logo-black.svg"
             alt="Lafal"
@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
           <a
-            href="#download"
+            href="/#download"
             className="rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
           >
             Download
@@ -84,7 +84,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#download"
+              href="/#download"
               className="rounded-full bg-gray-950 px-4 py-2 text-center text-sm font-medium text-white dark:bg-white dark:text-gray-950"
             >
               Download

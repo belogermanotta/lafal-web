@@ -5,9 +5,9 @@ const columns = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "Download", href: "#" },
+      { label: "Features", href: "/#features" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "Download", href: "/#download" },
       { label: "Changelog", href: "#" },
     ],
   },
@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
           <div className="sm:col-span-2">
-            <a href="#" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
+            <a href="/" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
               <Image
                 src="/logo-black.svg"
                 alt="Lafal"
