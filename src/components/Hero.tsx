@@ -9,17 +9,17 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   macos: {
     label: "macOS",
     icon: Apple,
-    href: "https://drive.google.com/drive/folders/1BG_SEjgHEE8WdkjzILVX3wa5UEaEsptT?usp=drive_link",
+    href: "/downloads/Lafal-macos-arm64.zip",
   },
   windows: {
     label: "Windows",
     icon: Monitor,
-    href: "https://drive.google.com/drive/folders/1tKox6bme9AlwYrIfs5Gm1FEGdat9aGZ5?usp=drive_link",
+    href: "/downloads/LafalSetup.exe",
   },
   linux: {
     label: "Linux",
     icon: Terminal,
-    href: "https://drive.google.com/drive/folders/1CferfCJdJNI5cBzN6mgDZHz3TKzI_lmj?usp=drive_link",
+    href: "/downloads/Lafal-linux-x86_64.tar.gz",
   },
 };
 
@@ -28,6 +28,11 @@ function detectOS(): OS {
   if (/Win/i.test(ua)) return "windows";
   if (/Linux/i.test(ua) && !/Android/i.test(ua)) return "linux";
   return "macos";
+}
+
+function linkProps(href: string) {
+  if (href.startsWith("/")) return { download: true };
+  return { target: "_blank", rel: "noopener noreferrer" };
 }
 
 export default function Hero() {
@@ -65,8 +70,7 @@ export default function Hero() {
         <div id="download" className="mt-10 flex flex-col items-center justify-center gap-3">
           <a
             href={primary.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...linkProps(primary.href)}
             className="flex items-center gap-2 rounded-full bg-gray-950 px-6 py-3 text-sm font-medium text-white shadow-lg shadow-gray-950/10 transition hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
           >
             <primary.icon size={18} />
@@ -76,8 +80,7 @@ export default function Hero() {
             Also available for{" "}
             <a
               href={platforms[others[0]].href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...linkProps(platforms[others[0]].href)}
               className="underline hover:text-gray-600 dark:hover:text-gray-300"
             >
               {platforms[others[0]].label}
@@ -85,8 +88,7 @@ export default function Hero() {
             and{" "}
             <a
               href={platforms[others[1]].href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...linkProps(platforms[others[1]].href)}
               className="underline hover:text-gray-600 dark:hover:text-gray-300"
             >
               {platforms[others[1]].label}
