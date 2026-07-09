@@ -9,17 +9,17 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   macos: {
     label: "macOS",
     icon: Apple,
-    href: "/downloads/Lafal-macos-arm64.zip",
+    href: "/downloads/macos/1.0.0/Lafal-macos-arm64.zip",
   },
   windows: {
     label: "Windows",
     icon: Monitor,
-    href: "/downloads/LafalSetup.exe",
+    href: "/downloads/windows/1.0.0/LafalSetup.exe",
   },
   linux: {
     label: "Linux",
     icon: Terminal,
-    href: "/downloads/Lafal-linux-x86_64.tar.gz",
+    href: "/downloads/linux/1.0.0/Lafal-linux-x86_64.tar.gz",
   },
 };
 
