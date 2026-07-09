@@ -4,7 +4,16 @@ import { Coffee } from "lucide-react";
 const columns = [
   {
     title: "Product",
-    links: ["Features", "Pricing", "Download", "Changelog"],
+    links: [
+      { label: "Features", href: "#" },
+      { label: "Pricing", href: "#" },
+      { label: "Download", href: "#" },
+      { label: "Changelog", href: "#" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [{ label: "Privacy Policy", href: "/privacy-policy" }],
   },
 ];
 
@@ -12,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-black/5 bg-white dark:border-white/10 dark:bg-gray-950">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
           <div className="sm:col-span-2">
             <a href="#" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
               <Image
@@ -52,12 +61,12 @@ export default function Footer() {
               </h4>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
