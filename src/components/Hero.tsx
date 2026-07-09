@@ -75,7 +75,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-5xl px-6 pb-24">
+      <div className="mx-auto max-w-5xl px-6 pb-24" style={{ display: "none" }}>
         <div className="rounded-2xl border border-black/10 bg-gradient-to-b from-gray-50 to-white p-2 shadow-2xl shadow-gray-950/10 dark:border-white/10 dark:from-gray-900 dark:to-gray-950">
           <div className="flex items-center gap-1.5 rounded-t-xl bg-gray-100 px-4 py-3 dark:bg-gray-800">
             <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
