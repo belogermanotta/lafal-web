@@ -13,7 +13,10 @@ const columns = [
   },
   {
     title: "Legal",
-    links: [{ label: "Privacy Policy", href: "/privacy-policy" }],
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Support", href: "/support" },
+    ],
   },
 ];
 
