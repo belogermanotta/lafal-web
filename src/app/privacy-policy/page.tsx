@@ -5,15 +5,15 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy — Lafal",
   description:
-    "How Lafal handles your data: local-first transcription, no analytics, no trackers, and what happens when you opt into a cloud transcription engine.",
+    "How Lafal handles your data: local-first processing, no analytics, no trackers, and what happens when you opt into a cloud AI provider.",
 };
 
 const sections = [
   {
     title: "Overview",
     body: [
-      "Lafal is a private desktop assistant for macOS, Windows & Linux. Privacy is a core design principle: by default, dictation, screen reading, and meeting processing happen locally on your device, and nothing you create is sent to Lafal.",
-      "This policy explains what happens on this website, in the desktop app, and when you choose to use an optional cloud transcription engine.",
+      "Lafal is a private desktop assistant for macOS, Windows & Linux. Privacy is a core design principle: by default, dictation, screen reading, meeting processing, and imported-media transcription happen locally on your device, and nothing you create is sent to Lafal.",
+      "This policy explains what happens on this website, in the desktop app, and when you choose to use an optional cloud AI provider.",
     ],
   },
   {
@@ -26,15 +26,15 @@ const sections = [
   {
     title: "The Lafal app",
     body: [
-      "Lafal contains no telemetry, no crash reporting, and no usage analytics. Your dictated audio, screen-reading captures, meeting transcripts, summaries, recordings, and text history are processed and stored on your device and are never sent to Lafal.",
+      "Lafal contains no telemetry, no crash reporting, and no usage analytics. Your dictated audio, screen-reading captures, meeting transcripts, imported-media transcripts, summaries, recordings, and text history are processed and stored on your device and are never sent to Lafal.",
       "App settings, text history, meeting notes, and recordings are stored locally on your device. Lafal may write local operational logs for troubleshooting; these are not sent to us. You choose if and where to export or share your content.",
     ],
   },
   {
-    title: "Optional cloud transcription engines",
+    title: "Optional cloud AI providers",
     body: [
-      "Lafal lets you optionally connect your own API key for Claude, ChatGPT/OpenAI, Gemini, or Grok for higher accuracy. You can also connect an Ollama, llama-server, or other OpenAI-compatible server that you run yourself. If you enable a cloud provider, the audio or text needed for that request is sent directly from your device to the provider using your own credentials — it never passes through Lafal's servers, because Lafal has none.",
-      "Data sent to a cloud engine is handled according to that provider's own privacy policy and terms. Cloud transcription is entirely opt-in; local, on-device transcription remains the default.",
+      "Lafal lets you optionally connect your own API key for Claude, ChatGPT/OpenAI, Gemini, Grok, or DeepSeek for higher-quality writing and summaries. You can also connect an Ollama, llama-server, or other OpenAI-compatible server that you run yourself. Dictation, meeting, and imported-media audio are transcribed locally first; if you enable a cloud provider, the text needed for proofreading or summarization is sent directly from your device to that provider using your own credentials — it never passes through Lafal's servers, because Lafal has none.",
+      "Data sent to a cloud provider is handled according to that provider's own privacy policy and terms. Cloud writing and summarization are entirely opt-in; local, on-device processing remains the default.",
     ],
   },
   {
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
-            Effective July 9, 2026
+            Effective August 31, 2026
           </p>
 
           <div className="mt-12 space-y-10">

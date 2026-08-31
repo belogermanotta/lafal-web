@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Apple, Monitor, Terminal, type LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 type OS = "macos" | "windows" | "linux";
 
@@ -56,6 +57,12 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-4xl px-6 pt-20 pb-16 text-center sm:pt-28">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-700 dark:text-violet-300">
+          <span className="rounded-full bg-violet-600 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-white">
+            v1.0.0
+          </span>
+          Import recordings, choose local speech voices, and export richer notes
+        </div>
         <h1 className="text-4xl font-semibold tracking-tight text-gray-950 sm:text-6xl dark:text-white">
           Your words, written,
           <br />
@@ -99,6 +106,12 @@ export default function Hero() {
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
           Free to start &middot; No account required for local transcription
         </p>
+        <Link
+          href="/changelog"
+          className="mt-4 inline-block text-xs font-medium text-violet-600 underline decoration-violet-600/30 underline-offset-4 transition hover:text-violet-500 dark:text-violet-400"
+        >
+          See what&apos;s new →
+        </Link>
       </div>
 
       <div className="mx-auto max-w-5xl px-6 pb-24" style={{ display: "none" }}>

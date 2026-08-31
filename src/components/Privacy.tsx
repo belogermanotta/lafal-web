@@ -12,14 +12,14 @@ const claims: Claim[] = [
     icon: Cpu,
     title: "Local by default",
     description:
-      "Local models process dictation, screen reading, and writing on your device. Nothing leaves unless you choose a cloud provider.",
+      "Local models handle dictation, screen reading, and on-device writing on your machine. Your audio is transcribed locally; nothing is sent to Lafal.",
     live: true,
   },
   {
     icon: CloudOff,
     title: "Cloud is opt-in",
     description:
-      "Bring your own provider and credentials. Cloud requests go directly from your device to the service you selected.",
+      "Bring your own provider and credentials. When you choose cloud writing or summarization, only the text needed for that request goes directly from your device to the service you selected.",
   },
   {
     icon: EyeOff,
@@ -30,7 +30,7 @@ const claims: Claim[] = [
     icon: FileText,
     title: "Your notes stay yours",
     description:
-      "History, meeting transcripts, recordings, and Markdown exports are stored locally and remain under your control.",
+      "History, meeting and imported-media transcripts, recordings, and Markdown exports are stored locally and remain under your control.",
   },
 ];
 

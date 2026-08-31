@@ -9,6 +9,8 @@ import {
   NotebookPen,
   Cpu,
   History,
+  Upload,
+  FolderOpen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -34,8 +36,9 @@ const features: Feature[] = [
     icon: Mic,
     title: "Speech to text",
     description:
-      "Hold a hotkey and speak, then release. Lafal transcribes your words and types them wherever your cursor is — with a tap-to-toggle mode when you need longer thoughts.",
+      "Hold a hotkey and speak, then release. Local Whisper transcribes your words and types them wherever your cursor is — with push-to-talk, toggle, and multilingual model choices.",
     gradient: "from-violet-600 to-indigo-500",
+    tags: ["Local Whisper", "Multilingual", "Push-to-talk or toggle"],
   },
   {
     icon: SpellCheck2,
@@ -77,32 +80,48 @@ const features: Feature[] = [
     icon: Volume2,
     title: "Text to speech & Lafalify",
     description:
-      "Drag over any region of your screen and hear it read aloud. OCR recognizes the text, highlights each row and word as it plays, and gives you pause, skip, speed, and volume controls.",
+      "Drag over any region of your screen and hear it read aloud. Local OCR recognizes the text, highlights each row and word as it plays, and gives you pause, skip, speed, volume, and local voice controls.",
     gradient: "from-cyan-600 to-blue-500",
-    tags: ["OCR", "Highlights", "Playback controls"],
+    tags: ["Local OCR", "Local voices", "Playback controls"],
   },
   {
     icon: NotebookPen,
     title: "Meeting recording & summary",
     description:
-      "Start a meeting from the tray. Lafal transcribes in the background, captures system audio when available, then saves a titled Markdown note with the summary, transcript, and recording.",
+      "Start a meeting from the tray. Lafal transcribes in the background, captures system audio when supported, and saves a titled note with timestamps, summary, transcript, and recording.",
     gradient: "from-fuchsia-600 to-violet-500",
-    tags: ["Transcript", "Summary", "Markdown notes"],
+    tags: ["Timestamps", "Summary", "Markdown export"],
+  },
+  {
+    icon: Upload,
+    title: "Import audio & video",
+    description:
+      "Have a recording already? Choose an audio or video file from Home and process it as a meeting note or a concise summary. Lafal extracts the audio and transcribes it in bounded, timestamped chunks.",
+    gradient: "from-rose-600 to-orange-500",
+    tags: ["Audio + video", "Meeting or summary", "Local processing"],
+  },
+  {
+    icon: FolderOpen,
+    title: "Notes that fit your workflow",
+    description:
+      "Keep notes in Lafal's searchable history or export them to a folder you choose. Meeting exports include linked transcripts and recordings; concise summaries can land in a QuickNote folder.",
+    gradient: "from-amber-500 to-orange-500",
+    tags: ["Markdown", "Linked recordings", "QuickNote"],
   },
   {
     icon: Cpu,
     title: "Local-first models",
     description:
-      "Choose from bundled local model tiers that download once and run on your machine — no account or API key required. Connect your own cloud provider when you want to.",
+      "Choose separate local tiers for text, speech, and voices. They download once and run on your machine — no account or API key required. Connect your own cloud provider when you want to, with model lists refreshed on demand.",
     gradient: "from-emerald-600 to-teal-500",
-    tags: ["Offline capable", "No account", "Bring your own key"],
+    tags: ["Text, speech, and voice tiers", "Model refresh", "Bring your own key"],
   },
   {
     icon: History,
     title: "History that stays useful",
     description:
-      "Search past text transformations and browse saved meeting notes from one desktop app, with configurable retention and local Markdown exports for your own folders.",
-    gradient: "from-amber-500 to-orange-500",
+      "Search past text transformations and browse saved meeting or imported-media notes from one desktop app, with configurable retention and local Markdown exports for your own folders.",
+    gradient: "from-slate-600 to-gray-500",
   },
 ];
 

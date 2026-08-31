@@ -5,6 +5,8 @@ const features = [
   "Unlimited local dictation and text tools",
   "Lafalify screen reading with OCR",
   "Meeting recordings, transcripts, and summaries",
+  "Import audio/video as a meeting or summary note",
+  "Local speech and voice model choices",
   "Searchable local history and Markdown notes",
   "Bring your own cloud provider or API key",
 ];
