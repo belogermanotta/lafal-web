@@ -1,4 +1,4 @@
-import { Cpu, EyeOff, Radar, FileX2, Ban, type LucideIcon } from "lucide-react";
+import { Cpu, EyeOff, FileText, CloudOff, type LucideIcon } from "lucide-react";
 
 type Claim = {
   icon: LucideIcon;
@@ -10,26 +10,27 @@ type Claim = {
 const claims: Claim[] = [
   {
     icon: Cpu,
-    title: "Runs 100% locally",
+    title: "Local by default",
     description:
-      "Every word is processed right on your device. Nothing is ever uploaded.",
+      "Local models process dictation, screen reading, and writing on your device. Nothing leaves unless you choose a cloud provider.",
     live: true,
   },
   {
-    icon: EyeOff,
-    title: "No analytics",
-    description: "Zero telemetry, zero metrics, zero usage tracking. Ever.",
-  },
-  {
-    icon: Radar,
-    title: "No trackers",
+    icon: CloudOff,
+    title: "Cloud is opt-in",
     description:
-      "No hidden pixels, no fingerprinting, no third-party SDKs phoning home.",
+      "Bring your own provider and credentials. Cloud requests go directly from your device to the service you selected.",
   },
   {
-    icon: FileX2,
-    title: "No logs",
-    description: "Nothing you dictate is ever written to a log file or server.",
+    icon: EyeOff,
+    title: "No analytics or trackers",
+    description: "No telemetry, usage tracking, fingerprinting, or third-party SDKs phoning home.",
+  },
+  {
+    icon: FileText,
+    title: "Your notes stay yours",
+    description:
+      "History, meeting transcripts, recordings, and Markdown exports are stored locally and remain under your control.",
   },
 ];
 
@@ -53,10 +54,11 @@ export default function Privacy() {
             Privacy by default
           </span>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl dark:text-white">
-            Everything stays on your device
+            Your data stays in your hands
           </h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            No analytics. No trackers. No logs. What you say is yours alone.
+            No analytics. No trackers. No Lafal servers. What you say stays
+            under your control.
           </p>
         </div>
 
@@ -75,11 +77,7 @@ export default function Privacy() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500 dark:border-gray-900" />
                   </span>
-                ) : (
-                  <span className="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-rose-500 text-white dark:border-gray-900">
-                    <Ban size={11} />
-                  </span>
-                )}
+                ) : null}
               </div>
               <h3 className="mt-4 font-semibold text-gray-950 dark:text-white">
                 {title}

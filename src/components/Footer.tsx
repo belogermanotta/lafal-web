@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Coffee } from "lucide-react";
 
 const columns = [
@@ -26,7 +27,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
           <div className="sm:col-span-2">
-            <a href="/" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
+            <Link href="/" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
               <Image
                 src="/logo-black.svg"
                 alt="Lafal"
@@ -42,9 +43,9 @@ export default function Footer() {
                 className="hidden h-8 w-8 dark:block"
               />
               Lafal
-            </a>
+            </Link>
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-              Voice-to-text dictation for macOS, Windows &amp; Linux
+              A private desktop assistant for writing, dictation, screen reading, and meeting notes.
             </p>
             <a
               href="https://buymeacoffee.com/lafal.ai"

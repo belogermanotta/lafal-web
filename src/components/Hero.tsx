@@ -19,7 +19,7 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   linux: {
     label: "Linux",
     icon: Terminal,
-    href: "/downloads/linux/1.0.0/Lafal-linux-x86_64.tar.gz",
+    href: "https://github.com/belogermanotta/lafal-web/releases/download/linux-build-2026-08-31/Lafal-linux-x86_64.tar.gz",
   },
 };
 
@@ -39,6 +39,7 @@ export default function Hero() {
   const [os, setOs] = useState<OS>("macos");
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only OS detection after hydration
     setOs(detectOS());
   }, []);
 
@@ -56,15 +57,15 @@ export default function Hero() {
 
       <div className="mx-auto max-w-4xl px-6 pt-20 pb-16 text-center sm:pt-28">
         <h1 className="text-4xl font-semibold tracking-tight text-gray-950 sm:text-6xl dark:text-white">
-          Voice-to-text dictation
+          Your words, written,
           <br />
-          for macOS, Windows &amp; Linux
+          read, and remembered
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-400">
-          Speak naturally and watch your words appear anywhere. Transcribe
-          offline with local models for total privacy, or plug in your
-          favorite cloud engine for maximum accuracy.
+          Lafal is a private desktop assistant for dictation, writing,
+          on-screen reading, and meeting notes. Use local models by default,
+          with your own cloud provider available when you need it.
         </p>
 
         <div id="download" className="mt-10 flex flex-col items-center justify-center gap-3">
@@ -76,24 +77,23 @@ export default function Hero() {
             <primary.icon size={18} />
             Download for {primary.label}
           </a>
-          <p className="text-xs text-gray-400 dark:text-gray-500">
-            Also available for{" "}
-            <a
-              href={platforms[others[0]].href}
-              {...linkProps(platforms[others[0]].href)}
-              className="underline hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              {platforms[others[0]].label}
-            </a>{" "}
-            and{" "}
-            <a
-              href={platforms[others[1]].href}
-              {...linkProps(platforms[others[1]].href)}
-              className="underline hover:text-gray-600 dark:hover:text-gray-300"
-            >
-              {platforms[others[1]].label}
-            </a>
-          </p>
+          {others.length > 0 && (
+            <p className="text-xs text-gray-400 dark:text-gray-500">
+              Also available for{" "}
+              {others.map((key, index) => (
+                <span key={key}>
+                  {index > 0 && " and "}
+                  <a
+                    href={platforms[key].href}
+                    {...linkProps(platforms[key].href)}
+                    className="underline hover:text-gray-600 dark:hover:text-gray-300"
+                  >
+                    {platforms[key].label}
+                  </a>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
 
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">

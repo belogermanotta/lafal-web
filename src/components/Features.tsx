@@ -5,6 +5,10 @@ import {
   Wand2,
   FileText,
   ShieldCheck,
+  Volume2,
+  NotebookPen,
+  Cpu,
+  History,
   type LucideIcon,
 } from "lucide-react";
 
@@ -30,7 +34,7 @@ const features: Feature[] = [
     icon: Mic,
     title: "Speech to text",
     description:
-      "Say it, don't type it. Lafal turns your voice into clean text at conversation speed — significantly faster than any keyboard.",
+      "Hold a hotkey and speak, then release. Lafal transcribes your words and types them wherever your cursor is — with a tap-to-toggle mode when you need longer thoughts.",
     gradient: "from-violet-600 to-indigo-500",
   },
   {
@@ -69,6 +73,37 @@ const features: Feature[] = [
       "A six-level verdict on any claim — with a plain-English explanation, a source link when one's available, and a one-click Google fallback whenever the answer is inconclusive.",
     gradient: "from-violet-600 to-indigo-500",
   },
+  {
+    icon: Volume2,
+    title: "Text to speech & Lafalify",
+    description:
+      "Drag over any region of your screen and hear it read aloud. OCR recognizes the text, highlights each row and word as it plays, and gives you pause, skip, speed, and volume controls.",
+    gradient: "from-cyan-600 to-blue-500",
+    tags: ["OCR", "Highlights", "Playback controls"],
+  },
+  {
+    icon: NotebookPen,
+    title: "Meeting recording & summary",
+    description:
+      "Start a meeting from the tray. Lafal transcribes in the background, captures system audio when available, then saves a titled Markdown note with the summary, transcript, and recording.",
+    gradient: "from-fuchsia-600 to-violet-500",
+    tags: ["Transcript", "Summary", "Markdown notes"],
+  },
+  {
+    icon: Cpu,
+    title: "Local-first models",
+    description:
+      "Choose from bundled local model tiers that download once and run on your machine — no account or API key required. Connect your own cloud provider when you want to.",
+    gradient: "from-emerald-600 to-teal-500",
+    tags: ["Offline capable", "No account", "Bring your own key"],
+  },
+  {
+    icon: History,
+    title: "History that stays useful",
+    description:
+      "Search past text transformations and browse saved meeting notes from one desktop app, with configurable retention and local Markdown exports for your own folders.",
+    gradient: "from-amber-500 to-orange-500",
+  },
 ];
 
 export default function Features() {
@@ -76,12 +111,12 @@ export default function Features() {
     <section id="features" className="mx-auto max-w-6xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl dark:text-white">
-          Everything you need to type less
+          Write, dictate, listen, remember
         </h2>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-          One app, two ways to transcribe — fully local for privacy, or cloud
-          engines for speed and accuracy. Then let Lafal clean up, reshape,
-          and check what you wrote.
+          One private desktop assistant for voice dictation, screen reading,
+          meeting notes, and better writing. Keep processing local by default,
+          or connect the provider you already trust.
         </p>
       </div>
 

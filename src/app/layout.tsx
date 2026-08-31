@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lafal — Voice-to-Text Dictation for macOS, Windows & Linux",
+  title: "Lafal — Private Dictation, Writing & Meeting Notes",
   description:
-    "Lafal is a fast, private voice-to-text dictation app. Transcribe offline with local models or use cloud engines from OpenAI, Deepgram, Groq, and more.",
+    "Lafal is a private desktop assistant for dictation, writing, screen reading, and meeting notes. Run local models on your device or connect your own provider.",
 };
 
 export default function RootLayout({

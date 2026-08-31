@@ -1,10 +1,12 @@
 import { Check, Coffee } from "lucide-react";
+import Link from "next/link";
 
 const features = [
-  "Unlimited local transcription",
-  "Bring your own cloud API key",
-  "100+ languages",
-  "System-wide dictation on macOS",
+  "Unlimited local dictation and text tools",
+  "Lafalify screen reading with OCR",
+  "Meeting recordings, transcripts, and summaries",
+  "Searchable local history and Markdown notes",
+  "Bring your own cloud provider or API key",
 ];
 
 export default function Pricing() {
@@ -30,7 +32,8 @@ export default function Pricing() {
             <span className="text-gray-500 dark:text-gray-400">forever</span>
           </div>
           <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-            Everything you need to get started with local dictation.
+            Everything you need to write, speak, listen, and keep track of
+            what happened.
           </p>
 
           <ul className="mt-6 space-y-3">
@@ -44,12 +47,12 @@ export default function Pricing() {
             ))}
           </ul>
 
-          <a
-            href="#"
+          <Link
+            href="/#download"
             className="mt-8 block rounded-full bg-gray-950 px-5 py-2.5 text-center text-sm font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
           >
             Download for free
-          </a>
+          </Link>
         </div>
 
         <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">

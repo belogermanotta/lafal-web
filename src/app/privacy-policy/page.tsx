@@ -12,7 +12,7 @@ const sections = [
   {
     title: "Overview",
     body: [
-      "Lafal is a voice-to-text dictation app for macOS, Windows & Linux. Privacy is a core design principle: by default, all transcription happens locally on your device using on-device models, and nothing you dictate is uploaded, logged, or analyzed.",
+      "Lafal is a private desktop assistant for macOS, Windows & Linux. Privacy is a core design principle: by default, dictation, screen reading, and meeting processing happen locally on your device, and nothing you create is sent to Lafal.",
       "This policy explains what happens on this website, in the desktop app, and when you choose to use an optional cloud transcription engine.",
     ],
   },
@@ -20,20 +20,20 @@ const sections = [
     title: "This website",
     body: [
       "lafal.ai does not use analytics, cookies, or third-party trackers. We don't collect personal information from visitors browsing this site.",
-      "App installers are hosted on Google Drive. When you download Lafal, that download is subject to Google's own privacy policy.",
+      "App downloads are served from the public download assets linked on this site. Downloading an installer does not create a Lafal account or send your app content to us.",
     ],
   },
   {
     title: "The Lafal app",
     body: [
-      "Lafal contains no telemetry, no crash reporting, and no usage analytics. Your dictated audio and transcripts are processed and stored on your device and are never sent to us.",
-      "App settings and local transcription history are stored locally on your device and are never transmitted anywhere unless you explicitly export or share them yourself.",
+      "Lafal contains no telemetry, no crash reporting, and no usage analytics. Your dictated audio, screen-reading captures, meeting transcripts, summaries, recordings, and text history are processed and stored on your device and are never sent to Lafal.",
+      "App settings, text history, meeting notes, and recordings are stored locally on your device. Lafal may write local operational logs for troubleshooting; these are not sent to us. You choose if and where to export or share your content.",
     ],
   },
   {
     title: "Optional cloud transcription engines",
     body: [
-      "Lafal lets you optionally connect your own API key for cloud transcription engines (e.g. OpenAI, Deepgram, Groq) for higher accuracy. If you enable this, the audio you dictate is sent directly from your device to that provider using your own credentials — it never passes through Lafal's servers, because Lafal has none.",
+      "Lafal lets you optionally connect your own API key for Claude, ChatGPT/OpenAI, Gemini, or Grok for higher accuracy. You can also connect an Ollama, llama-server, or other OpenAI-compatible server that you run yourself. If you enable a cloud provider, the audio or text needed for that request is sent directly from your device to the provider using your own credentials — it never passes through Lafal's servers, because Lafal has none.",
       "Data sent to a cloud engine is handled according to that provider's own privacy policy and terms. Cloud transcription is entirely opt-in; local, on-device transcription remains the default.",
     ],
   },

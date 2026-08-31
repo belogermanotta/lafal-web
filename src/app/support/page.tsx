@@ -13,17 +13,27 @@ const faqs = [
   {
     question: "Does dictation work without an internet connection?",
     answer:
-      "Yes. Local models run entirely on-device and are optimized for Apple Silicon, so transcription keeps working even offline.",
+      "Yes. Lafal's bundled local models run on your device, so dictation and the core writing tools can keep working offline after the one-time model download.",
   },
   {
     question: "Which cloud providers can I connect?",
     answer:
-      "You can bring your own API key for OpenAI, Deepgram, Groq, Google, or Anthropic.",
+      "You can bring your own API key for Claude, ChatGPT/OpenAI, Gemini, or Grok. You can also connect an Ollama, llama-server, or other OpenAI-compatible server that you run yourself.",
   },
   {
     question: "Is my audio ever sent anywhere?",
     answer:
-      "Only if you choose a cloud engine. Local mode processes everything on your device and nothing is uploaded.",
+      "Only when you choose a cloud provider. Local dictation, local models, Lafalify's screen reading, and saved meeting notes stay on your device. Cloud requests go directly from Lafal to the provider you configured.",
+  },
+  {
+    question: "What is Lafalify?",
+    answer:
+      "Lafalify is Lafal's screen reader. Press its hotkey, drag over text anywhere on your screen, and Lafal uses local OCR and speech synthesis to read it aloud while highlighting the text as it goes.",
+  },
+  {
+    question: "Can Lafal summarize meetings?",
+    answer:
+      "Yes. Start a recording from the system tray. Lafal transcribes the meeting in the background, optionally captures system audio when supported, and saves a searchable note with a generated title, summary, full transcript, and audio recording.",
   },
   {
     question: "Do I need an account to use Lafal?",
