@@ -12,6 +12,35 @@ export const metadata: Metadata = {
 
 const updates = [
   {
+    version: "September 2026",
+    date: "September 24, 2026",
+    title: "Faster flow, stronger foundations",
+    intro:
+      "This update makes Lafal easier to use across the apps and platforms already in your day, while tightening the local experience underneath.",
+    items: [
+      [
+        "Meet AI Prompt",
+        "The former Concise action is now AI Prompt: turn a rough request into a clear, structured instruction for another AI agent, then review it before sending.",
+      ],
+      [
+        "A more useful Playground",
+        "Try Proofread, Rephrase, AI Prompt, Summarize, and Fact Check inside Lafal, with clearer results and a direct report-an-issue path.",
+      ],
+      [
+        "Better macOS controls",
+        "Actions now use a predictable F1–F6 shortcut row, Speech to Text supports an optional second binding, and meeting system-audio capture is more reliable.",
+      ],
+      [
+        "Smoother Lafalify on Linux",
+        "Wayland selection, pointer behavior, Escape handling, overlay positioning, and native text highlighting received a broad reliability pass.",
+      ],
+      [
+        "More dependable local models",
+        "First-run downloads and startup now get the time they actually need, with clearer recovery when a packaged runtime needs to be refreshed.",
+      ],
+    ],
+  },
+  {
     version: "1.0.0",
     date: "August 31, 2026",
     title: "A fuller local assistant",
@@ -68,7 +97,7 @@ export default function ChangelogPage() {
               <article key={update.version}>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
                   <span className="rounded-full bg-gray-950 px-3 py-1 font-semibold text-white dark:bg-white dark:text-gray-950">
-                    v{update.version}
+                    {update.version === "1.0.0" ? `v${update.version}` : update.version}
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <CalendarDays size={15} />

@@ -3,9 +3,9 @@ import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lafal — Private Dictation, Writing & Meeting Notes",
+  title: "Lafal — Speak, Write, Listen & Remember",
   description:
-    "Lafal is a private desktop assistant for dictation, writing, screen reading, and meeting notes. Run local models on your device or connect your own provider.",
+    "A private desktop assistant for dictation, AI-assisted writing, screen reading, and meeting notes. Run local models or connect your own provider.",
 };
 
 export default function RootLayout({

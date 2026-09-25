@@ -24,7 +24,7 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="border-t border-black/5 bg-white dark:border-white/10 dark:bg-gray-950">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
           <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-semibold text-gray-950 dark:text-white">
@@ -45,7 +45,7 @@ export default function Footer() {
               Lafal
             </Link>
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-              A private desktop assistant for writing, dictation, screen reading, and meeting notes.
+              Speak, write, listen, and remember — privately, from one desktop app.
             </p>
             <a
               href="https://buymeacoffee.com/lafal.ai"

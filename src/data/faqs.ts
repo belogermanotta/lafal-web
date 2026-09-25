@@ -20,6 +20,11 @@ export const faqs: FaqEntry[] = [
       "Bring your own API key for Claude, ChatGPT/OpenAI, Gemini, Grok, or DeepSeek. You can also connect an Ollama, llama-server, or other OpenAI-compatible server that you run yourself.",
   },
   {
+    question: "What does AI Prompt do?",
+    answer:
+      "AI Prompt turns a rough request into a clear, structured instruction you can review and send to another AI tool. Use its global shortcut in any app or try it safely inside Lafal's Playground first.",
+  },
+  {
     question: "What is Lafalify?",
     answer:
       "Lafalify is Lafal's screen reader. Press its hotkey, drag over text anywhere on your screen, and local OCR and speech synthesis read it aloud while highlighting the text as it goes.",
@@ -32,7 +37,7 @@ export const faqs: FaqEntry[] = [
   {
     question: "Can I import an existing recording?",
     answer:
-      "Yes. From Home, choose an audio or video file and process it as either a meeting note or a concise summary. Lafal extracts the audio, transcribes it in timestamped chunks, and saves the resulting note locally.",
+      "Yes. From Home, choose an audio or video file and process it as either a meeting note or a focused summary. Lafal extracts the audio, transcribes it in timestamped chunks, and saves the resulting note locally.",
   },
   {
     question: "What does Linux and Wayland support look like?",

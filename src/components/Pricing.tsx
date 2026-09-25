@@ -2,7 +2,8 @@ import { Check, Coffee } from "lucide-react";
 import Link from "next/link";
 
 const features = [
-  "Unlimited local dictation and text tools",
+  "Unlimited local dictation and writing tools",
+  "AI Prompt and the in-app Playground",
   "Lafalify screen reading with OCR",
   "Meeting recordings, transcripts, and summaries",
   "Import audio/video as a meeting or summary note",
@@ -13,7 +14,7 @@ const features = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="bg-gray-50 py-24 dark:bg-white/[0.02]">
+    <section id="pricing" className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl dark:text-white">
@@ -25,7 +26,10 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-sm rounded-2xl border border-black/10 bg-white p-8 dark:border-white/10 dark:bg-gray-900/60">
+        <div className="relative mx-auto mt-14 max-w-md overflow-hidden rounded-3xl border border-violet-500/15 bg-gradient-to-b from-violet-500/[0.06] to-white p-8 shadow-xl shadow-violet-950/5 dark:border-violet-400/15 dark:from-violet-500/10 dark:to-white/[0.025]">
+          <div className="absolute top-0 right-0 rounded-bl-2xl bg-violet-600 px-4 py-2 text-[10px] font-bold tracking-[0.16em] text-white uppercase">
+            Full product
+          </div>
           <h3 className="font-semibold text-gray-950 dark:text-white">Free</h3>
           <div className="mt-4 flex items-baseline gap-1">
             <span className="text-4xl font-semibold tracking-tight text-gray-950 dark:text-white">
@@ -51,7 +55,7 @@ export default function Pricing() {
 
           <Link
             href="/#download"
-            className="mt-8 block rounded-full bg-gray-950 px-5 py-2.5 text-center text-sm font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+            className="mt-8 block rounded-full bg-gray-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
           >
             Download for free
           </Link>

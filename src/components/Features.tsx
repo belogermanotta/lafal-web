@@ -1,189 +1,162 @@
 import {
-  Mic,
-  SpellCheck2,
-  Scissors,
-  Wand2,
-  FileText,
-  ShieldCheck,
-  Volume2,
-  NotebookPen,
+  Bot,
   Cpu,
+  FileUp,
   History,
-  Upload,
-  FolderOpen,
+  Mic,
+  NotebookPen,
+  Play,
+  Sparkles,
+  Volume2,
   type LucideIcon,
 } from "lucide-react";
 
 type Feature = {
   icon: LucideIcon;
+  eyebrow: string;
   title: string;
   description: string;
   gradient: string;
-  tags?: string[];
+  tags: string[];
 };
-
-const verdicts = [
-  { label: "True", className: "bg-emerald-500" },
-  { label: "Likely True", className: "bg-emerald-400/70" },
-  { label: "Not Sure", className: "bg-amber-400" },
-  { label: "Likely False", className: "bg-orange-500/70" },
-  { label: "False", className: "bg-rose-500" },
-  { label: "Not a Claim", className: "bg-gray-400 dark:bg-gray-600" },
-];
 
 const features: Feature[] = [
   {
+    icon: Sparkles,
+    eyebrow: "Write",
+    title: "A writing toolkit in every app",
+    description:
+      "Proofread, rephrase, summarize, fact-check, or turn a rough thought into a structured AI Prompt. Select text, press a shortcut, and stay in context.",
+    gradient: "from-violet-600 to-fuchsia-500",
+    tags: ["Proofread", "Rephrase", "AI Prompt", "Summarize", "Fact-check"],
+  },
+  {
     icon: Mic,
-    title: "Speech to text",
+    eyebrow: "Dictate",
+    title: "Speech to text, wherever you type",
     description:
-      "Hold a hotkey and speak, then release. Local Whisper transcribes your words and types them wherever your cursor is — with push-to-talk, toggle, and multilingual model choices.",
-    gradient: "from-violet-600 to-indigo-500",
-    tags: ["Local Whisper", "Multilingual", "Push-to-talk or toggle"],
+      "Hold a hotkey and speak, then release. Local Whisper transcribes and types at your cursor, with multilingual models and push-to-talk or toggle activation.",
+    gradient: "from-indigo-600 to-violet-500",
+    tags: ["Local Whisper", "Multilingual", "Configurable hotkeys"],
   },
   {
-    icon: SpellCheck2,
-    title: "Proofread",
+    icon: Play,
+    eyebrow: "Experiment",
+    title: "A built-in Playground",
     description:
-      "Grammar, spelling, and punctuation corrected right where you wrote it — no rewrites, no rewording, just a cleaner version of your own words.",
-    gradient: "from-violet-600 to-indigo-500",
-  },
-  {
-    icon: Scissors,
-    title: "Concise",
-    description:
-      "Cuts the filler, keeps the point. Shortens your text in place while preserving exactly what you meant to say.",
-    gradient: "from-violet-600 to-indigo-500",
-  },
-  {
-    icon: Wand2,
-    title: "Rephrase",
-    description:
-      "One idea, any voice. Rewrite what you wrote in the tone the moment calls for.",
-    gradient: "from-violet-600 to-indigo-500",
-    tags: ["Barbaric", "Casual", "Standard", "Formal"],
-  },
-  {
-    icon: FileText,
-    title: "Summarize",
-    description:
-      "Get the gist in seconds. Opens in a tidy popup you can copy from or close the moment you're done.",
-    gradient: "from-violet-600 to-indigo-500",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Fact check",
-    description:
-      "A six-level verdict on any claim — with a plain-English explanation, a source link when one's available, and a one-click Google fallback whenever the answer is inconclusive.",
-    gradient: "from-violet-600 to-indigo-500",
+      "Try every writing action on pasted text inside Lafal. Compare the original and result without selecting text in another app, then report an issue in one click if needed.",
+    gradient: "from-sky-600 to-indigo-500",
+    tags: ["Five actions", "Side-by-side result", "No app switching"],
   },
   {
     icon: Volume2,
-    title: "Text to speech & Lafalify",
+    eyebrow: "Listen",
+    title: "Read any part of your screen",
     description:
-      "Drag over any region of your screen and hear it read aloud. Local OCR recognizes the text, highlights each row and word as it plays, and gives you pause, skip, speed, volume, and local voice controls.",
+      "Lafalify combines local OCR and speech. Drag over a region, hear it aloud, and follow row and word highlights with pause, skip, speed, volume, and voice controls.",
     gradient: "from-cyan-600 to-blue-500",
-    tags: ["Local OCR", "Local voices", "Playback controls"],
+    tags: ["Local OCR", "Local voices", "Wayland support"],
   },
   {
     icon: NotebookPen,
-    title: "Meeting recording & summary",
+    eyebrow: "Remember",
+    title: "Meeting notes that cite the moment",
     description:
-      "Start a meeting from the tray. Lafal transcribes in the background, captures system audio when supported, and saves a titled note with timestamps, summary, transcript, and recording.",
+      "Record from the tray while Lafal transcribes in the background. Notes include a title, summary, timestamped source references, transcript, and recording.",
     gradient: "from-fuchsia-600 to-violet-500",
-    tags: ["Timestamps", "Summary", "Markdown export"],
+    tags: ["System audio", "Timestamps", "Markdown export"],
   },
   {
-    icon: Upload,
-    title: "Import audio & video",
+    icon: FileUp,
+    eyebrow: "Import",
+    title: "Turn recordings into useful notes",
     description:
-      "Have a recording already? Choose an audio or video file from Home and process it as a meeting note or a concise summary. Lafal extracts the audio and transcribes it in bounded, timestamped chunks.",
+      "Choose an existing audio or video file and process it as a meeting note or focused summary. Audio is extracted and transcribed in bounded, timestamped chunks.",
     gradient: "from-rose-600 to-orange-500",
-    tags: ["Audio + video", "Meeting or summary", "Local processing"],
-  },
-  {
-    icon: FolderOpen,
-    title: "Notes that fit your workflow",
-    description:
-      "Keep notes in Lafal's searchable history or export them to a folder you choose. Meeting exports include linked transcripts and recordings; concise summaries can land in a QuickNote folder.",
-    gradient: "from-amber-500 to-orange-500",
-    tags: ["Markdown", "Linked recordings", "QuickNote"],
+    tags: ["Audio + video", "Meeting or summary", "Local transcription"],
   },
   {
     icon: Cpu,
-    title: "Local-first models",
+    eyebrow: "Stay local",
+    title: "Models that run on your machine",
     description:
-      "Choose separate local tiers for text, speech, and voices. They download once and run on your machine — no account or API key required. Connect your own cloud provider when you want to, with model lists refreshed on demand.",
+      "Choose independent local tiers for writing, speech, and voices. Lafal downloads each model once, caches it, and can keep working without an account or API key.",
     gradient: "from-emerald-600 to-teal-500",
-    tags: ["Text, speech, and voice tiers", "Model refresh", "Bring your own key"],
+    tags: ["Text", "Speech", "Voices", "GPU acceleration"],
+  },
+  {
+    icon: Bot,
+    eyebrow: "Choose",
+    title: "Bring the provider you trust",
+    description:
+      "Connect Claude, OpenAI, Gemini, Grok, DeepSeek, Ollama, or another OpenAI-compatible server. Refresh model lists on demand while built-in choices remain available offline.",
+    gradient: "from-amber-500 to-orange-500",
+    tags: ["Your API key", "Model refresh", "OpenAI-compatible"],
   },
   {
     icon: History,
-    title: "History that stays useful",
+    eyebrow: "Own your work",
+    title: "Searchable history, portable notes",
     description:
-      "Search past text transformations and browse saved meeting or imported-media notes from one desktop app, with configurable retention and local Markdown exports for your own folders.",
+      "Browse past transformations and saved meeting or media notes in one place. Keep configurable local history and export Markdown, transcripts, and recordings to your folders.",
     gradient: "from-slate-600 to-gray-500",
+    tags: ["Search", "Retention controls", "Local files"],
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="mx-auto max-w-6xl px-6 py-24">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl dark:text-white">
-          Write, dictate, listen, remember
+    <section id="features" className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-xs font-semibold tracking-[0.2em] text-violet-600 uppercase dark:text-violet-400">
+          One app, less friction
+        </p>
+        <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] text-balance text-gray-950 sm:text-5xl dark:text-white">
+          From first thought to a note you can use
         </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-          One private desktop assistant for voice dictation, screen reading,
-          meeting notes, and better writing. Keep processing local by default,
-          or connect the provider you already trust.
+        <p className="mt-5 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          Lafal brings voice, writing, screen reading, and meeting memory into
+          one private desktop workflow.
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ icon: Icon, title, description, gradient, tags }) => (
-          <div
+      <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {features.map(({ icon: Icon, eyebrow, title, description, gradient, tags }) => (
+          <article
             key={title}
-            className="group rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-gray-900/60 dark:hover:bg-gray-900"
+            className="group relative overflow-hidden rounded-3xl border border-black/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-950/5 dark:border-white/10 dark:bg-white/[0.035] dark:hover:border-white/15 dark:hover:bg-white/[0.055]"
           >
             <div
-              className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-sm transition group-hover:scale-105`}
-            >
-              <Icon size={20} />
+              aria-hidden
+              className={`absolute -top-20 -right-20 h-40 w-40 rounded-full bg-gradient-to-br ${gradient} opacity-0 blur-3xl transition duration-500 group-hover:opacity-15`}
+            />
+            <div className="flex items-center justify-between gap-4">
+              <div
+                className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white shadow-sm transition duration-300 group-hover:scale-105`}
+              >
+                <Icon size={20} />
+              </div>
+              <span className="text-[10px] font-semibold tracking-[0.18em] text-gray-400 uppercase dark:text-gray-500">
+                {eyebrow}
+              </span>
             </div>
-            <h3 className="mt-4 font-semibold text-gray-950 dark:text-white">
+            <h3 className="mt-6 text-lg font-semibold tracking-tight text-gray-950 dark:text-white">
               {title}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               {description}
             </p>
-
-            {tags && (
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-black/5 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            {title === "Fact check" && (
-              <div
-                className="mt-4 flex items-center gap-1"
-                title="Every claim gets one of six verdicts: True, Likely True, Not Sure, Likely False, False, or Not a Factual Claim."
-              >
-                {verdicts.map((v) => (
-                  <span
-                    key={v.label}
-                    className={`h-1.5 flex-1 rounded-full ${v.className}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+            <div className="mt-5 flex flex-wrap gap-1.5">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-black/[0.06] bg-gray-50 px-2.5 py-1 text-[11px] font-medium text-gray-600 dark:border-white/10 dark:bg-white/5 dark:text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </article>
         ))}
       </div>
     </section>
