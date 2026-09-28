@@ -28,7 +28,7 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   linux: {
     label: "Linux",
     icon: Terminal,
-    href: "https://github.com/belogermanotta/lafal-web/releases/download/linux-build-2026-08-31/Lafal-linux-x86_64.tar.gz",
+    href: "https://github.com/belogermanotta/lafal-web/releases/download/linux-build-2026-09-28/Lafal-linux-x86_64.tar.gz",
   },
 };
 
