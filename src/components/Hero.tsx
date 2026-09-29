@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Apple,
   ArrowRight,
@@ -18,7 +18,7 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   macos: {
     label: "macOS",
     icon: Apple,
-    href: "/downloads/macos/1.0.0/Lafal-macos-arm64.zip",
+    href: "https://github.com/belogermanotta/lafal-web/releases/download/macos-build-2026-09-29/Lafal-macos-intel.zip",
   },
   windows: {
     label: "Windows",
@@ -45,12 +45,9 @@ function linkProps(href: string) {
 }
 
 export default function Hero() {
-  const [os, setOs] = useState<OS>("macos");
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only OS detection after hydration
-    setOs(detectOS());
-  }, []);
+  const [os] = useState<OS>(() =>
+    typeof navigator === "undefined" ? "macos" : detectOS(),
+  );
 
   const primary = platforms[os];
   const others = (Object.keys(platforms) as OS[]).filter((key) => key !== os);

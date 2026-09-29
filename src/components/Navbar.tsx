@@ -75,14 +75,14 @@ export default function Navbar() {
         <div className="border-t border-black/5 px-6 py-4 dark:border-white/10 md:hidden">
           <div className="flex flex-col gap-4">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-gray-600 dark:text-gray-400"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Link
               href="/#download"
