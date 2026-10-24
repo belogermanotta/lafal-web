@@ -23,7 +23,7 @@ const platforms: Record<OS, { label: string; icon: LucideIcon; href: string }> =
   windows: {
     label: "Windows",
     icon: Monitor,
-    href: "/downloads/windows/1.0.0/LafalSetup.exe",
+    href: "https://github.com/belogermanotta/lafal-web/releases/download/windows-build-2026-10-24/LafalSetup.exe",
   },
   linux: {
     label: "Linux",
